@@ -3,6 +3,13 @@ import { createApi, fetchBAseQuery, fetchBaseQuery } from '@reduxjs/toolkit/quer
 export const goodsApi = createApi({
     reducerPath: 'goodsApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: 
+        baseUrl: 'http://localhost:3001/'
+    }),
+    endpoints: (build) => ({
+        getGoods: build.query({
+            query: () => 'goods',
+        })
     })
 })
+
+export const { useGetGoodsQuery} = goodsApi
