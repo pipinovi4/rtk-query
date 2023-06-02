@@ -2,26 +2,30 @@ import { useState } from "react";
 import { useAddProductMutation, useGetGoodsQuery } from "./redux";
 
 const App = () => {
-  const [count, setCount] = useState('')
-  const [newProduct, setNewProduct] = useState('')
-  const {data = [], iseLoading} = useGetGoodsQuery(count)
-  const [addProduct, {isError}] = useAddProductMutation();
+  const [count, setCount] = useState("");
+  const [newProduct, setNewProduct] = useState("");
+  const { data = [], iseLoading } = useGetGoodsQuery(count);
+  const [addProduct, { isError }] = useAddProductMutation();
 
-  const handleAddProduct = async ()=> {
+  const handleAddProduct = async () => {
     if (newProduct) {
-      await addProduct({name: newProduct}).unwrap()
-      setNewProduct('')
+      await addProduct({ name: newProduct }).unwrap();
+      setNewProduct("");
     }
-  }
+  };
 
-  if (iseLoading) return <h2>Loading...</h2>
+  if (iseLoading) return <h2>Loading...</h2>;
 
   return (
     <div>
       <div>
-        <input type="text" value={newProduct} onChange={(e) => setNewProduct(e.target.value)}/>
+        <input
+          type="text"
+          value={newProduct}
+          onChange={(e) => setNewProduct(e.target.value)}
+        />
         <button onClick={() => handleAddProduct()}>addProduct </button>
-      </div> 
+      </div>
       <div>
         <select value={count} onChange={(e) => setCount(e.target.value)}>
           <option value="''">all</option>
@@ -31,14 +35,12 @@ const App = () => {
         </select>
       </div>
       <ul>
-        {data.map(item => (
-          <li key={item.id}>
-            {item.name}
-          </li>
+        {data.map((item) => (
+          <li key={item.id}>{item.name}</li>
         ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
