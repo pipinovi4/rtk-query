@@ -1,40 +1,20 @@
 {
   "goods": [
     {
-      "id": 1,
-      "name": "Milk"
+      "name": "fsdfds",
+      "id": 2
     },
     {
-      "id": 2,
-      "name": "bananas"
+      "name": "fdsfdsf",
+      "id": 3
     },
     {
-      "id": 3,
-      "name": "icecream"
-    },
-    {
-      "name": "Zalupa",
+      "name": "fdsfdsf",
       "id": 4
     },
     {
-      "name": "yogurt",
+      "name": "sdfdsf",
       "id": 5
-    },
-    {
-      "name": "fsdfds",
-      "id": 6
-    },
-    {
-      "name": "авыаы",
-      "id": 7
-    },
-    {
-      "name": "авыаы",
-      "id": 8
-    },
-    {
-      "name": "аываы",
-      "id": 9
     }
   ]
 }
